@@ -3,84 +3,84 @@
     android:id="@+id/activity_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="55dp"
-    android:paddingLeft="55dp"
-    android:paddingRight="55dp"
-    android:paddingTop="55dp"
-
     android:background="@drawable/grad_bg"
-    >
+    android:paddingLeft="55dp"
+    android:paddingTop="55dp"
+    android:paddingRight="55dp"
+
+    android:paddingBottom="55dp">
 
     <TextView
-        android:text="User Registration"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:textColor="#000"
-        android:layout_marginTop="30dp"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/et_UserReg"
+        android:textColor="#000"
+        android:textSize="20dp" />
 
     <EditText
+        android:id="@+id/editName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Enter Name"
-        android:textColor="#000"
-        android:ems="10"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:id="@+id/editName"
-
         android:background="@drawable/et_bg"
-        android:gravity="center"/>
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/et_enter_name"
+
+        android:inputType="textEmailAddress"
+        android:textColor="#000" />
 
     <EditText
+        android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Enter Email"
-        android:background="@drawable/et_bg"
-        android:textColor="#000"
-        android:ems="10"
         android:layout_below="@+id/editName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:id="@+id/editEmail"
-        android:gravity="center"/>
+        android:background="@drawable/et_bg"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/et_enter_email"
+        android:inputType="textEmailAddress"
+        android:textColor="#000" />
 
     <EditText
+        android:id="@+id/editPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Enter Password"
-        android:textColor="#000"
-        android:ems="10"
         android:layout_below="@+id/editEmail"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:id="@+id/editPassword"
+        android:background="@drawable/et_bg"
+        android:ems="10"
         android:gravity="center"
-        android:background="@drawable/et_bg"/>
+        android:hint="@string/et_enter_pwd"
+        android:inputType="textPassword"
+        android:textColor="#000" />
 
     <Button
+        android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonRegister"
         android:layout_below="@+id/editPassword"
         android:layout_marginTop="20dp"
-        android:text="Register"
-        android:background="@drawable/btn_bg"/>
+        android:background="@drawable/btn_bg"
+        android:text="@string/btn_Reg" />
+
     <Button
+        android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonLogin"
         android:layout_below="@+id/buttonRegister"
         android:layout_marginTop="20dp"
-        android:text="Login"
-        android:background="@drawable/btn_bg"/>
+        android:background="@drawable/btn_bg"
+        android:text="@string/btn_Log" />
 
 </RelativeLayout>
