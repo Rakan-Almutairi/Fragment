@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">splash screen xd</string>
+    <string name="et_name">User name</string>
+    <string name="et_pwd">password</string>
+</resources>
