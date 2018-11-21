@@ -1,5 +1,4 @@
 package com.mobility.rakan.androidproject.activities;
-
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,12 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.mobility.rakan.androidproject.R;
 import com.mobility.rakan.androidproject.activities.sql.SQLiteHelper;
-import com.mobility.rakan.androidproject.models.Constants;
 
 public class RegisterActivit extends AppCompatActivity {
-    EditText Et_Email, Et_Pws, Et_Name;
+    EditText Email, Password, Name;
     Button Register, Login;
     String NameHolder, EmailHolder, PasswordHolder;
     Boolean EditTextEmptyHolder;
@@ -36,9 +33,9 @@ public class RegisterActivit extends AppCompatActivity {
         Register = findViewById(R.id.buttonRegister);
         Login = findViewById(R.id.buttonLogin);
 
-        Et_Email = findViewById(R.id.editEmail);
-        Et_Pws = findViewById(R.id.editPassword);
-        Et_Name = findViewById(R.id.editName);
+        Email = findViewById(R.id.editEmail);
+        Password = findViewById(R.id.editPassword);
+        Name = findViewById(R.id.editName);
         sqLiteHelper = new SQLiteHelper(this);
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,22 +51,18 @@ public class RegisterActivit extends AppCompatActivity {
                 // Creating SQLite database if dose n't exists
                 SQLiteDataBaseBuild();
 
+                // Creating SQLite table if dose n't exists.
+                SQLiteTableBuild();
+
                 // Checking EditText is empty or Not.
                 CheckEditTextStatus();
 
-                // Creating SQLite table if dose n't exists.
-                if (EditTextEmptyHolder) {
-                    SQLiteTableBuild();
+                // Method to check Email is already exists or not.
+                CheckingEmailAlreadyExistsOrNot();
 
-                    // Method to check Email is already exists or not.
-                    CheckingEmailAlreadyExistsOrNot();
+                // Empty EditText After done inserting process.
+                EmptyEditTextAfterDataInsert();
 
-                    // Empty EditText After done inserting process.
-                    EmptyEditTextAfterDataInsert();
-                }else{
-                    //If any of Reg EditText empty then this block will be executed.
-                    Toast.makeText(RegisterActivit.this, "Please Enter all fields.", Toast.LENGTH_LONG).show();
-                }
 
             }
         });
@@ -122,11 +115,11 @@ public class RegisterActivit extends AppCompatActivity {
     // Empty edittext after done inserting process method.
     public void EmptyEditTextAfterDataInsert() {
 
-        Et_Name.getText().clear();
+        Name.getText().clear();
 
-        Et_Email.getText().clear();
+        Email.getText().clear();
 
-        Et_Pws.getText().clear();
+        Password.getText().clear();
 
     }
 
@@ -134,9 +127,9 @@ public class RegisterActivit extends AppCompatActivity {
     public void CheckEditTextStatus() {
 
         // Getting value from All EditText and storing into String Variables.
-        NameHolder = Et_Name.getText().toString();
-        EmailHolder = Et_Email.getText().toString();
-        PasswordHolder = Et_Pws.getText().toString();
+        NameHolder = Name.getText().toString();
+        EmailHolder = Email.getText().toString();
+        PasswordHolder = Password.getText().toString();
 
         if (TextUtils.isEmpty(NameHolder) || TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(PasswordHolder)) {
 
@@ -181,7 +174,7 @@ public class RegisterActivit extends AppCompatActivity {
     public void CheckFinalResult() {
 
         // Checking whether email is already exists or not.
-        if (F_Result.equalsIgnoreCase(Constants.Email_Found)) {
+        if (F_Result.equalsIgnoreCase("Email Found")) {
 
             // If email is exists then toast msg will display.
             Toast.makeText(RegisterActivit.this, "Email Already Exists", Toast.LENGTH_LONG).show();
