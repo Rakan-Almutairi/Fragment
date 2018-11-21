@@ -2,4 +2,12 @@
     <string name="app_name">splash screen xd</string>
     <string name="et_name">User name</string>
     <string name="et_pwd">password</string>
+    <string name="et_email">Your Email</string>
+    <string name="et_WBS">Women Beauty salon</string>
+    <string name="et_UserReg">User Registration</string>
+    <string name="et_enter_name">Enter Name</string>
+    <string name="et_enter_email">Enter Email</string>
+    <string name="et_enter_pwd">Enter Password</string>
+    <string name="btn_Reg">Register</string>
+    <string name="btn_Log">Login</string>
 </resources>

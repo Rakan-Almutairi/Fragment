@@ -35,7 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="User Email" />
+                    android:text="@string/et_email" />
 
                 <EditText
                     android:id="@+id/et_name"
@@ -49,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Password" />
+                    android:text="@string/et_pwd" />
 
                 <EditText
                     android:id="@+id/et_pwd"

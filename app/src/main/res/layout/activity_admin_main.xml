@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grad_bg">
-
     <LinearLayout
         android:id="@+id/L1"
         android:layout_width="match_parent"
@@ -24,38 +23,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
-                android:gravity="center"
-                android:text="@string/et_WBS"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:text="@string/et_name"
                 android:id="@+id/tv_UserName"
                 android:textSize="18dp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/list_news"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/L1"
-        android:paddingLeft="10dp"/>
-
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_alignParentRight="true"
-        style="@style/btn"
-        android:text="Logout"
-        android:background="@drawable/btn_bg"/>
-
-
 </RelativeLayout>
