@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.mobility.rakan.androidproject.R;
 import com.mobility.rakan.androidproject.activities.sql.SQLiteHelper;
 
 public class RegisterActivit extends AppCompatActivity {
