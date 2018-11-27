@@ -7,6 +7,7 @@ import com.mobility.rakan.androidproject.R;
 import com.mobility.rakan.androidproject.models.Constants;
 
 public class ViewNews extends AppCompatActivity {
+
     WebView newsView;
 
     @Override
@@ -14,9 +15,11 @@ public class ViewNews extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
         newsView = findViewById(R.id.wv_news);
+
         Bundle b = getIntent().getExtras();
         String Link;
         Link = b.getString(Constants.Link);
+
         newsView.loadUrl(Link);
     }
 }

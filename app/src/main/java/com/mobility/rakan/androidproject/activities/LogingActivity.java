@@ -59,7 +59,6 @@ public class LogingActivity extends AppCompatActivity {
     public void sendToReg() {
         Intent myIntent = new Intent(LogingActivity.this, RegisterActivit.class);
         startActivity(myIntent);
-        finish();
     }
     public void LoginFunction() {
 

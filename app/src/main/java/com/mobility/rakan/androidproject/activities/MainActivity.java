@@ -27,15 +27,25 @@ import java.util.ArrayList;
 import static com.mobility.rakan.androidproject.models.Constants.login;
 
 public class MainActivity extends AppCompatActivity {
+
+    //region views
     ListView listNews;
-    ArrayList<News> news;
-    String userName;
     TextView etUserName;
     Button logOut;
+    //endregion
+
+    //region other
+    ArrayList<News> news;
+    String userName;
+    //endregion
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         listNews = findViewById(R.id.list_news);
         logOut = findViewById(R.id.btn_logout);
 
