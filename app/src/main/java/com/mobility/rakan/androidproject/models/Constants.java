@@ -6,5 +6,7 @@ public class Constants {
     public static final String Mypref ="MY_PREF";
     public static final String login ="login";
     public static final String Email_Found ="Email Found";
+    public static final String news ="news";
+    public static final String newsJson ="news.json";
 
 }

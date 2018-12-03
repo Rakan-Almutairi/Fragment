@@ -1,8 +1,11 @@
 package com.mobility.rakan.androidproject.activities;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,6 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.mobility.rakan.androidproject.Frafment.FragmentWebView;
 import com.mobility.rakan.androidproject.R;
 import com.mobility.rakan.androidproject.adapters.NewsAdapter;
 import com.mobility.rakan.androidproject.models.Constants;
@@ -37,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     //region other
     ArrayList<News> news;
     String userName;
+    FragmentManager mFragmentManager;
     //endregion
-
 
 
     @Override
@@ -58,9 +62,15 @@ public class MainActivity extends AppCompatActivity {
 
         //region reading and display list of news
         news = new ArrayList<>();
-        news = readJsonFile("news.json");
-        NewsAdapter mNewsAdapter = new NewsAdapter(MainActivity.this, news);
-        listNews.setAdapter(mNewsAdapter);
+        news = readJsonFile(Constants.newsJson);
+//        NewsAdapter mNewsAdapter = new NewsAdapter(MainActivity.this, news);
+//        listNews.setAdapter(mNewsAdapter);
+        mFragmentManager = getSupportFragmentManager();
+        FragmentWebView mFragmentTow = new FragmentWebView();
+        FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.add(R.id.frame_container2, mFragmentTow, "FragmentTow");
+        Bundle b = new Bundle();
+        mFragmentTransaction.commit();
         //endregion
 
         //log out
@@ -77,11 +87,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 // onclick in list with send the user to the link of the news
-                Intent myIntent = new Intent(MainActivity.this, ViewNews.class);
+                mFragmentManager = getSupportFragmentManager();
+                FragmentWebView mFragmentOne = new FragmentWebView();
+                FragmentTransaction mFragmentTransaction = mFragmentManager.beginTransaction();
+                mFragmentTransaction.add(R.id.frame_container, mFragmentOne, "FragmentOne");
                 Bundle b = new Bundle();
                 b.putString(Constants.Link, news.get(i).getLink());
-                myIntent.putExtras(b);
-                startActivity(myIntent);
+                mFragmentTransaction.commit();
+
             }
         });
     }
@@ -141,16 +154,18 @@ public class MainActivity extends AppCompatActivity {
     private String getUserName() {
         Bundle b = getIntent().getExtras();
         String userName = retrieveData(Constants.UserName);
-        if(userName =="")
-        return userName = b.getString(Constants.UserName);
+        if (userName == "")
+            return userName = b.getString(Constants.UserName);
         else return userName;
     }
+
     public void sendToLogIn() {
-        saveWord(login,false);
+        saveWord(login, false);
         Intent myIntent = new Intent(MainActivity.this, LogingActivity.class);
         startActivity(myIntent);
         finish();
     }
+
     public void saveWord(String key, Boolean saveThisWord) {
         SharedPreferences sharedPrefs;
         sharedPrefs = getSharedPreferences(Constants.Mypref, Context.MODE_PRIVATE);
@@ -161,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
 
         editor.commit();
     }
+
     public String retrieveData(String key) {
         SharedPreferences sharedPrefs;
         sharedPrefs = getSharedPreferences(Constants.Mypref, Context.MODE_PRIVATE);

@@ -56,6 +56,16 @@
         style="@style/btn"
         android:text="Logout"
         android:background="@drawable/btn_bg"/>
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/L1"/>
 
+    <FrameLayout
+        android:id="@+id/frame_container2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/L1"/>
 
 </RelativeLayout>

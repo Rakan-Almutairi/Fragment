@@ -3,10 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/wv_news"
+    <WebView
+        android:id="@+id/List_news"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/L1"
-        android:paddingLeft="10dp"/>
+        android:layout_height="match_parent"/>
 </android.support.constraint.ConstraintLayout>
