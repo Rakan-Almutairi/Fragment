@@ -21,7 +21,6 @@ public class FragmentWebView extends Fragment {
     View rootView;
 
     WebView newsView;
-    TextView tvNewsView;
 
     @Nullable
     @Override
