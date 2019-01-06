@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 
 import com.mobility.rakan.androidproject.R;
 import com.mobility.rakan.androidproject.models.Constants;
